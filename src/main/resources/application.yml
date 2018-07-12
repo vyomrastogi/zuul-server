@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: zuul-server
+server:
+  port: ${PORT:9090}
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl: 
+     defaultZone: ${EUREKA_URL}/eureka/
+  instance:
+    securePortEnabled: true 
+    securePort: ${PORT:8080}
+    hostname: ${DOMAIN:localhost}
+    homePageUrl: https://${eureka.instance.hostname}/
+ribbon: 
+  eureka: 
+   enabled: true
+zuul: 
+ routes: 
+  customer-service: 
+   path: /api/customer/**
+   serviceId: CUSTOMER-SERVICE
+  item-service: 
+   path: /api/item/**
+   serviceId: ITEM-SERVICE
+  sales-order-service: 
+   path: /api/salesorder/**
+   serviceId: SALES-ORDER-SERVICE
+

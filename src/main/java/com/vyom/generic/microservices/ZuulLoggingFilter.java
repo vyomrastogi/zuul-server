@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.vyom.payroll.microservices;
+package com.vyom.generic.microservices;
 
 import javax.servlet.http.HttpServletRequest;
 

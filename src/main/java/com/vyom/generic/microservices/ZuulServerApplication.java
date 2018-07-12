@@ -1,4 +1,4 @@
-package com.vyom.payroll.microservices;
+package com.vyom.generic.microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
