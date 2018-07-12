@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
@@ -17,6 +18,7 @@ import com.netflix.zuul.context.RequestContext;
  *
  */
 @Component
+@RefreshScope
 public class ZuulLoggingFilter extends ZuulFilter{
 
 	private static final Logger LOG  = LoggerFactory.getLogger(ZuulLoggingFilter.class);

@@ -1,0 +1,11 @@
+language: java
+jdk: oraclejdk8
+install:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- mvn clean package
+deploy:
+  provider: heroku
+  api_key:
+    secure: hKzj4xD/aAx3lanESEsJo5mgZRycDqJX6q+jl1+DM3N5T0kx26augVaaQclRC5PW8q4mnwlBSr5a8nGws/YCYqAcOCcGxzfCSbfr/gqWqypeuQi8Gv4OBpTeBbOSrgnMpjjLMNR7uPQWItXl7y9vISVChEmGyJOIZiTEWRCropPVouxESjmrpxamYhQIPTYDtyEIArUg1J7YWJVF9/vDV+YzAT6EoA3UI26HQeuVZQ1sMq1SnAbO4JyDzxV/S/Qx04pAvcjU7KloMbQtyeRMuGHAmtV4t6C9qaulWESH4BEKoE0SEcbEb9A+M+VoOPyk7S0bPrbhi/0ql61Oejn0ADp+D9Rnj8KFEO5LAADSCx0b+Sjvr8A8uhwj11kt0L2/mMKz+erz+6a5RWNxaUutJnEnhZ0mhyU6ahB0UjKzjcRbt5q0q+SMAcphymZv6pfZ/Ldt6lMB1x2WPaOnCZJGN+zHa9bEY6rPi5Tzw3IIAdJzg4pK/E7smOKuScGnw+WjVzgOWcu9iqn1BvBtzTgLconBEtTGVpLnXidxujuFg6lXCBHlyWKueijStuvWX/5ipq0DPFoij5zGnkZunqgRVr271KIdXE6vr/Fuft7urSvz3PKCkE2KqzwIYApSMursVcIlXjn9CebXZ4QcMYemdAgQyRItHCiw1ectx79LwVg=
+  app: ms-zuul-edge-server 
